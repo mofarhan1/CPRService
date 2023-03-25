@@ -18,7 +18,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Persons persons={persons} setPersons={setPersons} param={param} handleChange={handleChange}  />} />
-          <Route path="/getPatient" element={<PersonDetail param={param}  />} />
+          <Route path="/getPerson" element={<PersonDetail param={param}  />} />
         </Routes>
       </BrowserRouter>
     </div>

@@ -2,12 +2,15 @@ package com.example.cprService.model;
 
 import jakarta.persistence.*;
 
+import jakarta.validation.constraints.Size;
+import org.hibernate.validator.constraints.Length;
+
 @Entity
-@Table(name = "patient")
-public class Patient {
+@Table(name = "person")
+public class Person {
 
     @Id
-    @Column(name = "id")
+    @Column(name = "id", nullable = false)
     private String id;
 
     @Column(name = "address")
@@ -27,24 +30,19 @@ public class Patient {
 
     @Column(name = "zip")
     private String zip;
-    @Column(name = "region")
-    private String region;
+
     @Column(name = "guardian")
     private String guardian;
 
     @Column(name = "comment")
     private String comment;
 
-    @Column(name = "municipality")
-    private String municipality;
+
 
     public void setAddress(String address) {
         this.address = address;
     }
 
-    public void setRegion(String region) {
-        this.region = region;
-    }
 
     public void setGuardian(String guardian) {
         this.guardian = guardian;
@@ -54,17 +52,11 @@ public class Patient {
         this.comment = comment;
     }
 
-    public void setMunicipality(String municipality) {
-        this.municipality = municipality;
-    }
 
     public String getAddress() {
         return address;
     }
 
-    public String getRegion() {
-        return region;
-    }
 
     public String getGuardian() {
         return guardian;
@@ -74,11 +66,8 @@ public class Patient {
         return comment;
     }
 
-    public String getMunicipality() {
-        return municipality;
-    }
 
-    public Patient() {
+    public Person() {
     }
 
     public String getId() {

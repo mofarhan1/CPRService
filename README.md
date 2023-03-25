@@ -1,7 +1,7 @@
 # Patient API
 
 # The API supports
-- Get a list of all patient
+- Get a list of all person
 - Get a Patient
 
 
@@ -12,8 +12,8 @@
 
 
 
-# get a patient
-### URL : http://localhost:8080/api/admission/create/patient
+# get a person
+### URL : http://localhost:8080/api/admission/create/person
 
 {
 "id": "2512489996",

@@ -1,6 +1,6 @@
 package com.example.cprService.repository;
 
-import com.example.cprService.model.Patient;
+import com.example.cprService.model.Person;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -10,9 +10,9 @@ import java.util.Optional;
 
 
 @Repository
-public interface PatientRepository extends JpaRepository<Patient, Long> {
-    Optional<Patient> findPatientById(Long id);
+public interface PersonRepository extends JpaRepository<Person, Long> {
+    Optional<Person> findPersonById(Long id);
 
-    @Query(value = "SELECT * FROM PATIENT WHERE ID=:id", nativeQuery = true)
-    Patient findPatientByCpr(@Param("id") String id);
+    @Query(value = "SELECT * FROM PERSON WHERE ID=:id", nativeQuery = true)
+    Person findPatientByCpr(@Param("id") String id);
 }

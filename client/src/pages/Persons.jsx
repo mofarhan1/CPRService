@@ -10,7 +10,7 @@ const Persons = ({persons, setPersons,param, handleChange}) => {
   useEffect(() => {
     const fetchAllPersons = async () => {
       try {
-        const res = await axios.get("http://localhost:8080/api/patients");
+        const res = await axios.get("http://localhost:8080/api/persons");
         setPersons(res.data);
         console.log(res.data);
       } catch (err) {
@@ -24,7 +24,7 @@ const Persons = ({persons, setPersons,param, handleChange}) => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8800/patients/${param}`);
+      await axios.delete(`http://localhost:8800/persons/${param}`);
       window.location.reload()
     } catch (err) {
       console.log(err);
@@ -41,7 +41,7 @@ const Persons = ({persons, setPersons,param, handleChange}) => {
         onChange={handleChange}
       />
       <button className="searchbtn">
-        <Link  to={`/getPatient?id=${param}`}style={{ color: "inherit", textDecoration: "none" }}>
+        <Link  to={`/getPerson?id=${param}`}style={{ color: "inherit", textDecoration: "none" }}>
          Searh
         </Link>
       </button>
