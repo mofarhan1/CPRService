@@ -14,5 +14,5 @@ public interface PersonRepository extends JpaRepository<Person, Long> {
     Optional<Person> findPersonById(Long id);
 
     @Query(value = "SELECT * FROM PERSON WHERE ID=:id", nativeQuery = true)
-    Person findPatientByCpr(@Param("id") String id);
+    Person findPersonByCpr(@Param("id") String id);
 }
