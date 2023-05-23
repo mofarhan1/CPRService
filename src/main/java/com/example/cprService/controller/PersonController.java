@@ -13,9 +13,10 @@ import java.io.IOException;
 import java.util.*;
 
 @RestController
-@RequestMapping
 @CrossOrigin
+@RequestMapping("/api")
 @Validated
+@ControllerAdvice
 public class PersonController {
 
 	private final PersonService personService;
@@ -30,7 +31,7 @@ public class PersonController {
 
 
 
-	@GetMapping("/api/getPersons")
+	@GetMapping("/persons")
 	public ResponseEntity<List<Person>> getPersons() {
 		List<Person> people = personService.getAllPersons();
 		return ResponseEntity.ok(people);
@@ -38,7 +39,7 @@ public class PersonController {
 
 
 	//getPerson?personID=<CPR>&gurdian=<gurdian>
-	@GetMapping("/api/getPerson")
+	@GetMapping("/getPerson")
 	public ResponseEntity<?> getPerson(@RequestParam  @Size(min = 10, max = 10, message = "Input must have length of 10") String id) {
 		ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
 		Validator validator = factory.getValidator();
